@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team - RAMODA</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      padding: 20px;
+      background: #ffffff;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+    }
+
+    .back-arrow {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 1.5em;
+      color: #333;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .title {
+      font-size: 2em;
+      font-weight: bold;
+      color: #1e1e2f;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .leaders, .creators {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .leader-card {
+      width: 90%;
+      margin: 15px 0;
+      padding: 15px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #6e82b7, #9cace6);
+      color: #ffffff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .leader-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .leader-card h3 {
+      font-size: 1.5em;
+      margin-bottom: 5px;
+    }
+
+    .leader-card p {
+      font-size: 1em;
+      margin: 0;
+      opacity: 0.8;
+    }
+
+    .creator-list {
+      margin-top: 20px;
+      padding: 10px;
+      background: #eaeaea;
+      border-radius: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .creator-name {
+      margin: 10px;
+      padding: 10px 15px;
+      border-radius: 6px;
+      background: #d1d1d1;
+      color: #555;
+      font-size: 1em;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: default;
+    }
+
+    .creator-name:hover {
+      background-color: #1e1e2f;
+      color: #ffffff;
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      padding: 20px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .modal-content h3 {
+      color: #333;
+    }
+
+    .modal-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .modal-content li {
+      margin: 10px 0;
+      font-size: 1em;
+      color: #555;
+    }
+
+    .close-modal {
+      margin-top: 20px;
+      padding: 8px 16px;
+      background: #333;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="welcome.html" class="back-arrow">← Back</a>
+    <h1 class="title">Our Leaders</h1>
+    <div class="section leaders">
+      <div class="leader-card" onclick="showModal('N.D', 'OUR PRESIDENT', ['Programmer', 'Coder', 'Cyber Security Technician', 'Data Analyst'])">
+        <h3>N.D</h3>
+        <p>OUR PRESIDENT</p>
+      </div>
+      <div class="leader-card" onclick="showModal('S.G', 'OUR VICE PRESIDENT', ['Strategist', 'Project Manager', 'Team Lead'])">
+        <h3>S.G</h3>
+        <p>OUR VICE PRESIDENT</p>
+      </div>
+      <div class="leader-card" onclick="showModal('N.T', 'CYBER SECURITY MANAGER', ['Cyber Security Expert', 'Ethical Hacker', 'Data Protection Specialist'])">
+        <h3>N.T</h3>
+        <p>CYBER SECURITY MANAGER</p>
+      </div>
+      <div class="leader-card" onclick="showModal('M.B', 'HUMAN RESOURCE MANAGER', ['People Operations', 'Talent Acquisition', 'Employee Engagement Specialist'])">
+        <h3>M.B</h3>
+        <p>HUMAN RESOURCE MANAGER</p>
+      </div>
+      <div class="leader-card" onclick="showModal('L.G', 'SUPERVISOR', ['Operations Manager', 'Quality Controller', 'Logistics Coordinator'])">
+        <h3>L.G</h3>
+        <p>SUPERVISOR</p>
+      </div>
+    </div>
+
+    <h2 class="section title" style="font-size: 1.5em; margin-top: 40px;">Our Content Creators and Promoters</h2>
+    <div class="section creators">
+      <div class="creator-list">
+        <div class="creator-name">N.D</div>
+        <div class="creator-name">S.G</div>
+        <div class="creator-name">N.T</div>
+        <div class="creator-name">M.B</div>
+        <div class="creator-name">L.G</div>
+        <div class="creator-name">T.Y</div>
+        <div class="creator-name">U.T</div>
+        <div class="creator-name">D.R</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="leaderModal">
+    <div class="modal-content">
+      <h3 id="modalTitle"></h3>
+      <ul id="modalDetails"></ul>
+      <button class="close-modal" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function showModal(name, title, details) {
+      document.getElementById('modalTitle').textContent = `${name} - ${title}`;
+      const detailsList = document.getElementById('modalDetails');
+      detailsList.innerHTML = '';
+      details.forEach(detail => {
+        const listItem = document.createElement('li');
+        listItem.textContent = detail;
+        detailsList.appendChild(listItem);
+      });
+      document.getElementById('leaderModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('leaderModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
